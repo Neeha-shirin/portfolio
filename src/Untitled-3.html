@@ -1,0 +1,180 @@
+import { useState } from "react";
+import profileImg from "./assets/profile.jpg";
+import skinStudioImg from "./assets/skinstudio.jpg";
+import employeeImg from "./assets/employee.jpg";
+import studentImg from "./assets/student.jpg";
+import foodImg from "./assets/food.jpg";
+
+export default function App() {
+  const [showCV, setShowCV] = useState(false);
+  const toggleCV = () => setShowCV(!showCV);
+
+  return (
+    <section className="min-h-screen bg-gray-100 flex flex-col items-center px-6 py-10">
+      {/* Profile Section */}
+      <img
+        src={profileImg}
+        alt="Profile"
+        className="w-40 h-40 rounded-full object-cover border-4 border-blue-500 shadow-md mb-6"
+      />
+
+      <h1 className="text-3xl md:text-4xl font-bold text-blue-700 mb-4">
+        Hi, I'm Neeha Shirin
+      </h1>
+
+      <p className="text-gray-700 text-center max-w-2xl leading-relaxed mb-6">
+        I'm a passionate and dedicated{" "}
+        <strong>Full Stack Developer</strong> specializing in{" "}
+        <strong>Python</strong> and modern web technologies. I love building
+        responsive, scalable web applications with a focus on clean design and
+        efficient code.
+        <br />
+        <br />
+        My core stack includes{" "}
+        <strong>
+          Python, Django, REST API, React, HTML, CSS, JavaScript
+        </strong>
+        , and I’m also experienced in using tools like{" "}
+        <strong>Git & Figma</strong>.
+      </p>
+
+      {/* CV Button */}
+      <button
+        onClick={toggleCV}
+        className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-full hover:bg-blue-700 transition mb-8"
+      >
+        {showCV ? "Hide CV" : "View CV"}
+      </button>
+
+      {/* CV Section */}
+      {showCV && (
+        <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-3xl mb-10">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">
+            Skills
+          </h2>
+          <ul className="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+            <li>HTML, CSS, JavaScript, React, Python, SQL</li>
+            <li>Django, Bootstrap, Responsive Design</li>
+            <li>PostgreSQL, SQLite</li>
+            <li>Git, Docker, Google Cloud, Railway</li>
+            <li>Figma</li>
+          </ul>
+
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">
+            Experience
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            <strong>Web Developer at Makbig, Kannur, Kerala (2024)</strong>
+            <br />
+            Gained hands-on experience working on a live Student Management
+            Application, contributing to core modules such as student
+            enrollment, attendance, grading, and user role management.
+            <br />
+            Built and managed eCommerce applications using Django, incorporating
+            secure authentication and authorization.
+            <br />
+            Developed custom admin panels with CRUD functionalities and
+            implemented role-based access controls.
+            <br />
+            Integrated third-party services like Stripe for payments and
+            optimized backend efficiency using PostgreSQL.
+          </p>
+        </div>
+      )}
+
+      {/* Projects Section */}
+      <div className="w-full max-w-5xl">
+        <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">
+          Projects
+        </h2>
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Project 1 */}
+          <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+            <img
+              src={employeeImg}
+              alt="Employee Management"
+              className="h-48 w-full object-cover"
+            />
+            <div className="p-5">
+              <h3 className="text-xl font-semibold text-blue-700 mb-2">
+                Employee Management
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Website built with Python and Django for employee attendance
+                management.
+              </p>
+            </div>
+          </div>
+
+          {/* Project 2 */}
+          <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+            <img
+              src={skinStudioImg}
+              alt="Skin Studio"
+              className="h-48 w-full object-cover"
+            />
+            <div className="p-5">
+              <h3 className="text-xl font-semibold text-blue-700 mb-2">
+                Skin Studio
+              </h3>
+              <p className="text-gray-600 text-sm mb-3">
+                Fully functional eCommerce website built with Django.
+              </p>
+              <a
+                href="https://ecommerce-pp7v.onrender.com/"
+                target="_blank"
+                className="text-blue-600 hover:underline text-sm"
+              >
+                Visit Project →
+              </a>
+            </div>
+          </div>
+
+          {/* Project 3 */}
+          <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+            <img
+              src={studentImg}
+              alt="Student Management"
+              className="h-48 w-full object-cover"
+            />
+            <div className="p-5">
+              <h3 className="text-xl font-semibold text-blue-700 mb-2">
+                Student Staff Management
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Full-stack web app built with Python and Django to manage
+                attendance, reviews, and tracking.
+              </p>
+            </div>
+          </div>
+
+          {/* Project 4 */}
+          <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+            <img
+              src={foodImg}
+              alt="Food Recipe"
+              className="h-48 w-full object-cover"
+            />
+            <div className="p-5">
+              <h3 className="text-xl font-semibold text-blue-700 mb-2">
+                Food Recipe
+              </h3>
+              <p className="text-gray-600 text-sm mb-3">
+                Built with React — users can search recipes and view ingredients
+                using a public food API.
+              </p>
+              <a
+                href="https://neeha-shirin.github.io/food-web/"
+                target="_blank"
+                className="text-blue-600 hover:underline text-sm"
+              >
+                Visit Project →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
