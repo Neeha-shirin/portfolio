@@ -106,7 +106,11 @@ export default function ProfessionalPortfolio() {
               {['Home', 'Projects', 'Contact'].map((item) => (
                 <button
                   key={item}
-                  onClick={() => setActiveSection(item.toLowerCase())}
+                  onClick={() => {
+                      setActiveSection(item.toLowerCase());
+                      document.getElementById(item.toLowerCase())?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+
                   className={`text-sm font-medium transition-all duration-300 ${
                     activeSection === item.toLowerCase() 
                       ? 'text-blue-500 border-b-2 border-blue-500' 
@@ -279,7 +283,7 @@ export default function ProfessionalPortfolio() {
             
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center pt-12">
               <a
-                href="neehasherin987@gmail.com"
+                href="mailto:neehasherin987@gmail.com"
                 className="bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 border border-blue-500/30 flex items-center gap-4 text-lg"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
