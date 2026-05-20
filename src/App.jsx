@@ -279,7 +279,7 @@ export default function ProfessionalPortfolio() {
                 </h1>
                 <div className="w-16 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                 <p className="text-xl lg:text-2xl text-gray-300 font-light">
-                  Full Stack Developer
+                  Full Stack Developer with 2 years of professional experience
                 </p>
               </div>
 
