@@ -163,7 +163,7 @@ export default function ProfessionalPortfolio() {
       description:
         "Full-stack educational platform connecting tutors with students, featuring real-time messaging and appointment scheduling.",
       technologies: ["React", "Django REST", "MySQL", "WebSockets"],
-      link: "https://tnm-frontend.tutor-nearme.com/",
+      link: "https://tutor-nearme.com/",
       github: "https://github.com/Neeha-shirin/tutor-near-me",
     },
     {
